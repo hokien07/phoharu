@@ -1,6 +1,6 @@
-<?php include ("header.php"); ?>
+<?php include ("block/header.php"); ?>
 <body>
-  <?php include ("topmenu.php"); ?>
+  <?php include ("block/topmenu.php"); ?>
 
     <div class="bg-top">
       <img src="upload/cho-thue-phong-hop-quan-1-quan-3-1.jpg" alt="phở haru" class="img-responsive center-block">
@@ -185,65 +185,7 @@
 
   <section id="tow-col" class="threre five">
     <div class="container-fuild">
-      <div cla<footer id="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 col-md-12">
-        <div class="col-footer-left">
-          <div class="row">
-            <div class="col-lg-4 col-md-6">
-              <h3>about</h3>
-              <ul>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <h3>about</h3>
-              <ul>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-              </ul>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-              <h3>about</h3>
-              <ul>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-                <li><a href="#">Our Milestones</a></li>
-              </ul>
-            </div>
-          </div>
-        </div><!--/.footer-left-->
-      </div>
-      <div class="col-lg-6 col-md-12">
-        <div class="col-footer-right">
-          <h3>Our Brands</h3>
-          <a href="#">  Carl's Jr</a>
-        </div><!--/.col-footer-right-->
-      </div>
-      </div>
-    </div>
-    <div class="copy-right">
-      <p>Copyright © 2017 BreadTalk Group Limited. All Rights Reserved.</p>
-      <a href="#">Privacy Policy</a>
-    </div>
-</footer>
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="js/bootstrap.min.js"></script>
-</body>
-</html>ss="row">
+      <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="col-right">
             <p>At the BreadTalk Group, we believe in giving back to the communities that we are a part of. We do our bit in supporting causes closest to our hearts, such as developing the local arts and culture scene, nurturing our next generation and supporting the local communities.</p>
@@ -264,4 +206,4 @@
     </div>
   </section>
 
-<?php include ("footer.php"); ?>
+<?php include ("block/footer.php"); ?>
