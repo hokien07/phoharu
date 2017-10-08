@@ -1,34 +1,8 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="hokien07.net">
-  <link rel="icon" href="favicon.ico">
-  <title>Phở Haru</title>
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <!--Main Style-->
-  <link href="style.css" rel="stylesheet">
-  <link href="css/ninja-slider.css" rel="stylesheet">
-
-</head>
+<?php include ("header.php"); ?>
 
 <body>
-  <header>
-    <nav>
-      <ul class="top-header">
-        <li class="home first active"><a href="#">HOME</a></li>
-        <li class="about"><a href="#">ABOUT</a></li>
-        <li class="investor"><a href="#">INVESTOR</a></li>
-        <li class="partnership"><a href="#">PARTNERSHIP</a></li>
-        <li class="people"><a href="#">PEOPLE</a></li>
-        <li class="career"><a href="#">CAREER</a></li>
-        <li class="contact last"><a href="#">CONTACT</a></li>
-      </ul>
-    </nav>
-  </header>
+  <?php include ("topmenu.php"); ?>
+
   <div class="bg-top">
     <img src="upload/cho-thue-phong-hop-quan-1-quan-3-1.jpg" alt="phở haru" class="img-responsive center-block">
   </div>
@@ -92,3 +66,4 @@
     </div>
   </div><!--/.container-->
   <div class="clrear" style="height: 37px;"></div>
+<?php include ("footer.php"); ?>
