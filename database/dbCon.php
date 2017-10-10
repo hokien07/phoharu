@@ -2,7 +2,7 @@
 $host = "localhost";
 $username = "root";
 $pass = "";
-$dbname = "phoHaru_db";
+$dbname = "phoHaru";
 $dbc = mysqli_connect($host, $username, $pass, $dbname);
 
 //check connect database

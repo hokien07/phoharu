@@ -1,7 +1,7 @@
-<?php include ("header.php"); ?>
+<?php include ("block/header.php"); ?>
 
 <body>
-  <?php include ("topmenu.php"); ?>
+  <?php include ("block/topmenu.php"); ?>
 
   <div class="bg-top">
     <img src="upload/cho-thue-phong-hop-quan-1-quan-3-1.jpg" alt="phở haru" class="img-responsive center-block">
@@ -66,4 +66,4 @@
     </div>
   </div><!--/.container-->
   <div class="clrear" style="height: 37px;"></div>
-<?php include ("footer.php"); ?>
+<?php include ("block/footer.php"); ?>

@@ -1,7 +1,7 @@
-<?php include ("header.php"); ?>
+<?php include ("block/header.php"); ?>
 
 <body>
-  <?php include ("topmenu.php"); ?>
+  <?php include ("block/topmenu.php"); ?>
 
 
   <div class="bg-top">
@@ -96,4 +96,4 @@
 </div>
 
 <div class="clrear" style="height: 37px;"></div>
-<?php include ("footer.php"); ?>
+<?php include ("block/footer.php"); ?>

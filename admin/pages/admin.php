@@ -1,89 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <title>Phở Haru - Trang Quản Lý</title>
+<?php include("header.php"); ?>
+<style media="screen">
+    label {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .btn-capnhat {
+      display: block;
+      margin: 20px auto;
+    }
 
-  <!-- Bootstrap Core CSS -->
-  <link href="../dist/css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom CSS -->
-  <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
-  <!-- Custom Fonts -->
-  <link href="../dist/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</style>
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+<div id="wrapper">
+  <?php include("topmenu.php"); ?>
+  <?php include("sidebar.php"); ?>
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h4 class="page-header">Chỉnh Sửa Thông Tin Trang Chủ</h4>
+    </div>
 
-</head>
-
-<body>
-  <div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="index.html">Phở Haru</a>
-      </div>
-      <!-- /.navbar-header -->
-
-      <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-          <ul class="nav" id="side-menu">
-            <li>
-              <a href="#"><i class="fa fa-home fa-fw"></i> Sửa Trang Chủ</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-picture-o" aria-hidden="true"></i> Thêm hình ảnh</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-address-card" aria-hidden="true"></i> Sửa Giới Thiệu</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Đăng tin tức</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-envelope-open" aria-hidden="true"></i> Tin Tuyển Dụng</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> Trang liên hệ</a>
-            </li>
-            <li>
-              <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Trang đối tác</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.sidebar-collapse -->
-      </div>
-      <!-- /.navbar-static-side -->
-    </nav>
-    <div id="page-wrapper">
+    <div class="form-index">
       <div class="row">
-        <div class="col-lg-12">
-          <h1 class="page-header">Chỉnh Sửa Thông Tin Trang Chủ</h1>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <label for="">Giới thiệu Ngắn</label>
+          <textarea type="text"  name="gioithieungan" class="form-control" cols="5" rows="5" placeholder=" Giới thiệu ngắn về cửa hàng Phở Haru"></textarea>
+
+          <label for="">Thông tin đối tác</label>
+          <textarea type="text" name="gioithieudoitac" class="form-control" cols="5" rows="5"  placeholder="  Giới thiệu ngắn về các đối tác"></textarea>
+
+          <label for="">Mô tả các hoạt động</label>
+          <textarea type="text" name="gioithieudoitac" class="form-control" cols="5" rows="5"  placeholder="   Mô tả các hoạt động hay diễn ra tại Phở Haru"></textarea>
+
+          <textarea type="text" name="tamnhinvachienluoc" class="form-control" cols="5" rows="5"  placeholder="Tầm Nhìn Và Chiến Luợc"></textarea>
+          <label for="">Tầm Nhìn Và Chiến Luợc</label>
+
+          <label for=""> Chế độ  làm việc của nhân viên</label>
+          <textarea type="text" name="tuyendung" class="form-control" cols="5" rows="5"  placeholder=" Chế độ  làm việc của nhân viên"></textarea>
+
+          <label for=""> Tại sao chọn chúng tôi</label>
+          <textarea type="text" name="taisaochon" class="form-control" cols="5" rows="5"  placeholder=" Chế độ  làm việc của nhân viên"></textarea>
+
+          <input type="submit" name="submit" value="Cập Nhật" class="btn btn-primary btn-capnhat">
         </div>
       </div>
     </div>
-    <!-- /#page-wrapper -->
   </div>
-  <!-- /#wrapper -->
-  <!-- jQuery -->
-  <script src="../dist/js/jquery.min.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="../dist/css/bootstrap/js/bootstrap.min.js"></script>
-  <!-- Custom Theme JavaScript -->
-  <script src="../dist/js/sb-admin-2.js"></script>
-</body>
-</html>
+</div>
+<!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+<?php include("footer.php"); ?>

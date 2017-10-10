@@ -1,7 +1,8 @@
-<?php include ("header.php"); ?>
+<?php include("database/dbCon.php");?>
+<?php include ("block/header.php"); ?>
 
 <body>
-  <?php include ("topmenu.php"); ?>
+  <?php include ("block/topmenu.php"); ?>
 
   <div class="bg-top">
     <img src="upload/cho-thue-phong-hop-quan-1-quan-3-1.jpg" alt="phở haru" class="img-responsive center-block">
@@ -13,98 +14,32 @@
         <p>At the BreadTalk Group, we believe in giving back to the communities that we are a part of. We do our bit in supporting causes closest to our hearts, such as developing the local arts and culture scene, nurturing our next generation and supporting the local communities.</p>
       </div>
 
-        <hr class="style18">
+      <hr class="style18">
 
-        <div class="row">
+      <div class="row">
+        <?php
+        $q = "
+        SELECT * FROM tintuc;
+        ";
+        $r = mysqli_query($dbc, $q);
+        ?>
+
+        <?php while ($tin = mysqli_fetch_array($r)):?>
           <div class="col-md-3">
             <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
+              <img src="upload/tin-tuc/<?php echo $tin['urlhinh'] ?>" alt="<?php echo $tin['tieude'] ?>" class="img-responsive center-block">
               <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
+                <h4 class="title-tin-tuc"><?php echo $tin['tieude'] ?></h4>
+                <p><?php echo $tin['mota'] ?></p>
               </div>
             </div>
           </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-3">
-            <div class="tin-tuc">
-              <img src="upload/tin-tuc/hinh1.jpg" alt="hinh tin tuc" class="img-responsive center-block">
-              <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc">School holiday treat for North East CDC kids</h4>
-                <p>As part of the BreadTalk Group’s efforts give back to the community, 28 children beneficiaries and 12 of their parents from the North East Community Development Council (CDC) were invited to Toast Box…</p>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
+        <?php endwhile; ?>
       </div>
     </div>
-
-
   </div>
-
+</div>
 </div>
 </div><!--/.content-hoptac-->
 <div class="clrear" style="height: 37px;"></div>
-<?php include ("footer.php"); ?>
+<?php include ("block/footer.php"); ?>

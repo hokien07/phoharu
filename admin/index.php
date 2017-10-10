@@ -52,7 +52,7 @@
                   </label>
                 </div>
                 <!-- Change this to a button or input when using this as a form -->
-                <a href="pages/index.html" class="btn btn-lg btn-success btn-block">Đăng nhập</a>
+                <a href="pages/admin.php" class="btn btn-lg btn-success btn-block">Đăng nhập</a>
               </fieldset>
             </form>
           </div>
