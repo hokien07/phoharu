@@ -44,9 +44,9 @@ label {
             $size = $_FILES['hinhanh']['size'];
 
             move_uploaded_file(
-            		$_FILES["hinhanh"]["tmp_name"],
-            		"../../upload/thu-vien/$hinh"
-            	);
+              $_FILES["hinhanh"]["tmp_name"],
+              "../../upload/thu-vien/$hinh"
+            );
           }
           if (empty($errors)) {
             //them khach hang vao bang khach hang.
@@ -77,7 +77,7 @@ label {
         }//end main if condituon submit.
         ?>
 
-      <?php if(isset($mes)) echo $mes; ?>
+        <?php if(isset($mes)) echo $mes; ?>
 
       </div>
       <div class="form-index">
@@ -111,6 +111,36 @@ label {
           </div>
         </div>
       </div>
+
+      <!--tat ca hinh anh-->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Hình</th>
+            <th>Tiêu Đề</th>
+            <th>Mô Tả</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $qhinhanh = "SELECT * FROM hinhanh ORDER BY idHinhAnh DESC";
+            $rhinhanh = mysqli_query($dbc, $qhinhanh);
+            $stt = 1;
+            while ($hinhs = mysqli_fetch_array($rhinhanh)) {
+              echo "
+              <tr>
+                <th scope='row'>{$stt}</th>
+                <td><img src='../../upload/thu-vien/{$hinhs['urlHinh']}' width='100px' height='100px'></td>
+                <td>{$hinhs['tieuDeHinh']}</td>
+                <td>{$hinhs['moTaHinh']}</td>
+              </tr>
+              ";
+              $stt++;
+            }
+          ?>
+        </tbody>
+      </table>
     </div>
   </div>
   <!-- /#page-wrapper -->

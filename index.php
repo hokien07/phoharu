@@ -14,7 +14,7 @@
       $r = mysqli_query($dbc, $q);
       $trangchu = mysqli_fetch_array($r);
     ?>
-  <section id="tow-col" class="first">
+  <section id="tow-col" class="first post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -30,14 +30,14 @@
             <?php
                 echo "<p>" . the_content($trangchu['gioiThieuNgan']).  "</p>"
             ?>
-            <a href="#" class="more">chi tiết</a>
+            <a href="gioithieu.php" class="more">chi tiết</a>
           </div>
         </div>
       </div>
     </div>
   </section><!--/.first-->
 
-  <section id="breand">
+  <section id="breand" class="post">
     <div class="container-fuild">
       <h2>Danh mục thương hiệu</h2>
       <?php
@@ -68,7 +68,7 @@
     </div>
   </section><!-- /.breand -->
 
-  <section id="tow-col" class="second">
+  <section id="tow-col" class="second post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -84,14 +84,14 @@
             <?php
                   echo "<p>{$trangchu['moataHoatDong']} </p>"
               ?>
-            <a href="#" class="more">Chi tiet</a>
+            <a href="thuvien.php" class="more">chi tiết</a>
           </div>
         </div>
       </div>
     </div>
   </section><!--/.second-->
 
-  <section id="tow-col" class="threre">
+  <section id="tow-col" class="threre post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
@@ -99,7 +99,7 @@
             <?php
                 echo "<p>" . the_content($trangchu['tamNhinChienLuoc']).  "</p>"
               ?>
-            <a href="#" class="more">chi tiet</a>
+            <a href="hoptac.php" class="more">chi tiết</a>
           </div>
         </div>
 
@@ -114,7 +114,7 @@
     </div>
   </section>
 
-  <section id="tow-col" class="second four">
+  <section id="tow-col" class="second four post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
@@ -131,14 +131,14 @@
                 echo "<p>" . the_content($trangchu['choDoLamViec']).  "</p>"
 
             ?>
-            <a href="#" class="more">Chi tiet</a>
+            <a href="tintuc.php" class="more">chi tiết</a>
           </div>
         </div>
       </div>
     </div>
   </section><!--/.second-->
 
-  <section id="tow-col" class="threre five">
+  <section id="tow-col" class="threre five post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
@@ -147,7 +147,7 @@
                 echo "<p>" . the_content($trangchu['taiSaoChon']).  "</p>"
 
             ?>
-            <a href="#" class="more">chi tiet</a>
+            <a href="tuyendung.php" class="more">chi tiết</a>
           </div>
         </div>
 

@@ -15,6 +15,12 @@ hr.style18:before {
   border-width: 0 0 1px 0;
   border-radius: 20px;
 }
+.hidden{
+     opacity:0;
+}
+.visible{
+     opacity:1;
+}
 
 nav {
   position: absolute;
@@ -25,7 +31,7 @@ nav {
 }
 nav a {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.2rem;
   text-decoration: none;

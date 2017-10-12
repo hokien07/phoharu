@@ -161,6 +161,36 @@ label {
           </div>
         </div>
       </div>
+
+      <!--tat ca hinh anh-->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Ngày đăng</th>
+            <th>Vị trí tuyển</th>
+            <th>Nơi làm việc</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+            $qtins = "SELECT * FROM tintuyendung ORDER BY idTinTuyenDung DESC LIMIT 0,20";
+            $rtins = mysqli_query($dbc, $qtins);
+            $stt = 1;
+            while ($tins = mysqli_fetch_array($rtins)) {
+              echo "
+              <tr>
+                <th scope='row'>{$stt}</th>
+                <td>{$tins['ngayDang']}</td>
+                <td>{$tins['viTriTuyen']}</td>
+                <td>{$tins['noiLamViec']}</td>
+              </tr>
+              ";
+              $stt++;
+            }
+          ?>
+        </tbody>
+      </table>
     </div>
   </div>
   <!-- /#page-wrapper -->

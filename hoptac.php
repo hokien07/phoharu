@@ -1,4 +1,8 @@
-<?php include ("block/header.php"); ?>
+<?php
+  include("block/header.php");
+  include("database/dbCon.php");
+  include("function/function.php");
+?>
 
 <body>
   <?php include ("block/topmenu.php"); ?>
@@ -17,55 +21,19 @@
             <h2>Thương Hiệu Và Đối Tác</h2>
           </div>
         </div>
+
+        <?php
+          $q = "SELECT * FROM hoptac";
+          $r = mysqli_query($dbc, $q);
+          while($hotacs = mysqli_fetch_array($r)):
+        ?>
         <div class="col-md-12">
           <div class="thong-tin-hop-tac">
-            <h2>Term of Franchise</h2>
-            <p>The applicant will sign a ten-year franchise agreement with an option to renew.</p>
+            <h2><?php echo $hoptac['tenTieuDe'] ?></h2>
+            <?php echo "<p>". the_content($hoptac[noiDungTieuDe])  ."</p>" ?>
           </div>
         </div>
-
-        <div class="col-md-12">
-          <div class="thong-tin-hop-tac">
-            <h2>Goods & Services</h2>
-            <p>To ensure quality control, purchase of key ingredients from the franchisor is required. A full list of goods & services available is detailed in the Franchise Agreement.</p>
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <div class="thong-tin-hop-tac">
-            <h2>10 Steps to Partnership</h2>
-            <ul>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-12">
-          <div class="thong-tin-hop-tac">
-            <h2>We assist and support all of our franchisees with</h2>
-            <ul class="last">
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-              <li> Business Plan Proposal</li>
-            </ul>
-          </div>
-        </div>
-
-        <a href="#" class="hop-tac-more">I'm Interested</a>
+      <?php endwhile; ?>
       </div>
     </div>
   </div><!--/.content-hoptac-->

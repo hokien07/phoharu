@@ -31,7 +31,7 @@
     kiemtraquery($r, $q);
     $gioithieu = mysqli_fetch_array($r);
   ?>
-  <section id="tow-col" class="first single-page">
+  <section id="tow-col" class="first single-page post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -54,7 +54,7 @@
     </div>
   </section><!--/.first-->
 
-  <section id="tow-col" class="second single-page">
+  <section id="tow-col" class="second single-page post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
@@ -77,7 +77,7 @@
     </div>
   </section><!--/.second-->
 
-  <section id="tow-col" class="threre single-page">
+  <section id="tow-col" class="threre single-page post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
@@ -100,7 +100,7 @@
     </div>
   </section>
 
-  <section id="tow-col" class="four single-page">
+  <section id="tow-col" class="four single-page post">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
