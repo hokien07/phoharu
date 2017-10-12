@@ -101,7 +101,7 @@ label {
                 }
                 ?>
               </label>
-              <textarea name="noidung" rows="30" cols="80" class="form-control"></textarea>
+              <textarea name="noidung" class="ckeditor" rows="30" cols="80" class="form-control"></textarea>
 
               <label>Hình đại diện</label>
               <input type="file" name="hinhdaidien">

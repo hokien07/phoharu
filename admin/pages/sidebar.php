@@ -23,19 +23,28 @@
         <a href="doitac.php"><i class="fa fa-plus" aria-hidden="true"></i> Trang đối tác</a>
       </li>
       <li>
-        <a href="vitrituyendung.php"><i class="fa fa-plus" aria-hidden="true"></i>Vị trí tuyển dụng</a>
+        <a href="vitrituyendung.php"><i class="fa fa-plus" aria-hidden="true"></i> Vị trí tuyển dụng</a>
       </li>
       <li>
-        <a href="nghanhtuyendung.php"><i class="fa fa-plus" aria-hidden="true"></i>Nghành Nghề tuyển dụng</a>
+        <a href="nghanhtuyendung.php"><i class="fa fa-plus" aria-hidden="true"></i> Nghành Nghề tuyển dụng</a>
       </li>
       <li>
-        <a href="tintuyendung.php"><i class="fa fa-plus" aria-hidden="true"></i>Tin Tuyển Dụng</a>
+        <a href="tintuyendung.php"><i class="fa fa-plus" aria-hidden="true"></i> Tin Tuyển Dụng</a>
       </li>
       <li>
-        <a href="breand.php"><i class="fa fa-plus" aria-hidden="true"></i>Danh mục thương hiệu</a>
+        <a href="breand.php"><i class="fa fa-plus" aria-hidden="true"></i> Danh mục thương hiệu</a>
       </li>
       <li>
-        <a href="themhinhanh.php"><i class="fa fa-plus" aria-hidden="true"></i>Hình ảnh</a>
+        <a href="themhinhanh.php"><i class="fa fa-plus" aria-hidden="true"></i> Hình ảnh</a>
+      </li>
+      <li>
+        <a href="themuser.php"><i class="fa fa-plus" aria-hidden="true"></i> Thêm nguời dùng</a>
+      </li>
+      <li>
+        <a href="doimatkhau.php"><i class="fa fa-plus" aria-hidden="true"></i> Đổi mật khẩu</a>
+      </li>
+      <li>
+        <a href="logout.php"><i class="fa fa-plus" aria-hidden="true"></i> Đăng Xuất</a>
       </li>
 
     </ul>

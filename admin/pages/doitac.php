@@ -39,16 +39,16 @@ label {
 
           if (empty($errors)) {
 
-              //them khach hang vao bang khach hang.
-              $q = "INSERT INTO hoptac
-              (
-                tenTieuDe,
-                noiDungTieuDe
-              )
-              VALUES (
-                '{$tentieude}',
-                $noidungquandiem
-              )";
+            //them khach hang vao bang khach hang.
+            $q = "INSERT INTO hoptac
+            (
+              tenTieuDe,
+              noiDungTieuDe
+            )
+            VALUES (
+              '{$tentieude}',
+              $noidungquandiem
+            )";
 
             $r = mysqli_query($dbc, $q);
             kiemtraquery($r, $q);
@@ -64,7 +64,7 @@ label {
           }
         }//end main if condituon submit.
         ?>
-      <?php if(isset($mes)) echo $mes; ?>
+        <?php if(isset($mes)) echo $mes; ?>
       </div>
       <div class="form-nghanh-tuyen-dung">
         <div class="row">
@@ -72,24 +72,22 @@ label {
           <div class="col-md-8">
             <form class="nghanhtuyendung" method="post">
               <label for="">Tên Quan Điểm
-              <?php
-              if (isset($errors) && in_array("tentieude", $errors, true)) {
-                echo "<p class='warning'>Vui lòng nhập thông tin. </p>";
-              }
-              ?>
-            </label>
-            <input type="text" name="tentieude" placeholder=" Tên Tiêu Đề" class="form-control" value="<?php if (isset($_POST['tentieude'])) echo strip_tags($_POST['tentieude']) ?>">
+                <?php
+                if (isset($errors) && in_array("tentieude", $errors, true)) {
+                  echo "<p class='warning'>Vui lòng nhập thông tin. </p>";
+                }
+                ?>
+              </label>
+              <input type="text" name="tentieude" placeholder=" Tên Tiêu Đề" class="form-control" value="<?php if (isset($_POST['tentieude'])) echo strip_tags($_POST['tentieude']) ?>">
 
-            <label for="">Nội Dung Quan Điểm
-              <?php
-              if (isset($errors) && in_array("noidungquandiem", $errors, true)) {
-                echo "<p class='warning'>Vui lòng nhập thông tin. </p>";
-              }
-              ?>
-            </label>
-            <textarea id="noidungquandiem" name="noidungquandiem" rows="8" cols="80" placeholder="Quan Điểm Nghề Nghiệp" class="form-control"></textarea>
-            <?php echo "<script>CKEDITOR.replace('noidungquandiem');</script>" ?>
-
+              <label for="">Nội Dung Quan Điểm
+                <?php
+                if (isset($errors) && in_array("noidungquandiem", $errors, true)) {
+                  echo "<p class='warning'>Vui lòng nhập thông tin. </p>";
+                }
+                ?>
+              </label>
+              <textarea class="ckeditor" name="noidungquandiem"></textarea>
 
               <input type="submit" name="submit" value="Thêm" class="btn btn-primary btn-capnhat">
             </form>

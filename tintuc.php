@@ -28,9 +28,9 @@
 
           <div class="col-md-3">
             <div class="tin-tuc">
-              <a href="#"><img src="upload/tin-tuc/<?php echo $tin['urlhinh'] ?>" alt="<?php echo $tin['tieude'] ?>" class="img-responsive center-block"></a>
+              <a href="single.php?loaitin=tintuc&id=<?php echo $tin['id_tintuc'] ?>"><img src="upload/tin-tuc/<?php echo $tin['urlhinh'] ?>" alt="<?php echo $tin['tieude'] ?>" class="img-responsive center-block"></a>
               <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc"><a href="tintuc.php?id=<?php echo $tin['id_tintuc']; ?>"><?php echo the_excerpt($tin['tieude'], 100);  ?></a> </h4>
+                <h4 class="title-tin-tuc"><a href="single.php?loaitin=tintuc&id=<?php echo $tin['id_tintuc'] ?>"><?php echo the_excerpt($tin['tieude'], 100);  ?></a> </h4>
                 <p>
                   <?php  echo the_content(the_excerpt($tin['mota'], 200)); ?>
                 </p>

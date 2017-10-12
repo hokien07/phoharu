@@ -6,7 +6,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">Phở Haru</a>
+    <a class="navbar-brand" href="../../index.html">Phở Haru Xin Chào: <?php echo $_SESSION['taikhoan']; ?></a>
   </div>
   <!-- /.navbar-header -->
 </nav>
