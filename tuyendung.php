@@ -1,3 +1,5 @@
+<?php include ("database/dbCon.php"); ?>
+<?php include ("function/function.php"); ?>
 <?php include ("block/header.php"); ?>
 
 <body>
@@ -10,70 +12,54 @@
   <div class="content-tuyen-dung">
     <div class="container">
       <div class="header-tuyen-dung">
-        <h2>Meet Our People</h2>
-        <p>Our employees are inspired to be the best they can be, where our team is as diverse as the markets we serve.</p>
-        <p>We foster an open environment where creativity thrives, and provide you with the opportunities you need to keep developing.</p>
+        <h2>Nhân Viên Của Chúng Tôi</h2>
+        <p>Nhân viên của chúng tôi được cảm hứng là tốt nhất mà họ có thể được, nơi mà đội ngũ của chúng tôi đa dạng như thị trường chúng tôi phục vụ.</p>
+        <p>Chúng tôi thúc đẩy một môi trường cởi mở, nơi sự sáng tạo phát triển và cung cấp cho bạn những cơ hội bạn cần phát triển.</p>
       </div><!--./header-tuyen-dung-->
     </div>
 
     <div class="slide-nhan-vien">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <?php
+            //dem so luong slide
+            $qSlide = "
+                SELECT * FROM slidenhanvien
+            ";
+            $rSlide = mysqli_query($dbc, $qSlide);
+            kiemtraquery($rSlide, $qSlide);
+            $count = 0;
+            while ($slide = mysqli_fetch_array($rSlide)):
+          ?>
+          <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $count; ?>" class="active"></li>
+          <?php $count++; endwhile; ?>
         </ol>
         <div class="carousel-inner">
+          <?php
+            //lay thong tin nhan vien tu database
+            $qSlide = "
+                SELECT * FROM slidenhanvien
+            ";
+            $rSlide = mysqli_query($dbc, $qSlide);
+            kiemtraquery($rSlide, $qSlide);
+            while ($slide = mysqli_fetch_array($rSlide)):
+          ?>
           <div class="carousel-item active">
             <div class="row">
               <div class="col-md-6">
                 <div class="hinh-slide">
-                  <img class="d-block w-100" src="upload/slide/slide1.jpg" alt="First slide">
+                  <img class="d-block w-100" src="upload/slide/<?php echo $slide['hinhNhanVien'] ?>" alt="<?php echo $slide['chucVuNhanVien'] ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="meta-slide">
-                  <h2>Sharing what's close to our hearts</h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid provident doloribus eum modi id et, sed vero eveniet obcaecati accusamus.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam iste impedit odit nulla neque asperiores repudiandae voluptatum cumque alias.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorem eveniet a vero exercitationem cum error rerum beatae impedit natus voluptatum quo corporis iste delectus reprehenderit praesentium dicta placeat accusantium expedita consectetur laudantium, officiis, numquam! Molestiae libero earum necessitatibus quos!</p>
+                  <h2><?php echo $slide['chucVuNhanVien'] ?></h2>
+                  <p><?php echo the_content($slide['motaNhanVien']); ?></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="hinh-slide">
-                  <img class="d-block w-100" src="upload/slide/slide2.jpg" alt="HINH NHAN VIEN 2">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="meta-slide">
-                  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, totam!</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error at atque sed maxime veniam quasi voluptatem adipisci repudiandae, fuga recusandae commodi dolore exercitationem nobis iste praesentium quos voluptatibus placeat deserunt, nihil incidunt, eveniet eius in id velit. Obcaecati modi perferendis reiciendis facilis dolorem nesciunt, commodi tempora asperiores officia. Veritatis.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem magnam odit, cum itaque qui suscipit nisi, facilis cumque reiciendis consectetur. Nobis ipsam perspiciatis et repellendus quis autem laborum accusantium facilis explicabo modi qui repudiandae, delectus similique itaque rem, iste nam tenetur ullam velit? Voluptas at laudantium quas quam. Iusto, facere!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="hinh-slide">
-                  <img class="d-block w-100" src="upload/slide/slide3.jpg" alt="HINH NHAN VIEN 3">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="meta-slide">
-                  <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, totam!</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio error at atque sed maxime veniam quasi voluptatem adipisci repudiandae, fuga recusandae commodi dolore exercitationem nobis iste praesentium quos voluptatibus placeat deserunt, nihil incidunt, eveniet eius in id velit. Obcaecati modi perferendis reiciendis facilis dolorem nesciunt, commodi tempora asperiores officia. Veritatis.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem magnam odit, cum itaque qui suscipit nisi, facilis cumque reiciendis consectetur. Nobis ipsam perspiciatis et repellendus quis autem laborum accusantium facilis explicabo modi qui repudiandae, delectus similique itaque rem, iste nam tenetur ullam velit? Voluptas at laudantium quas quam. Iusto, facere!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php endwhile; ?>
         </div>
       </div>
     </div><!--/.slide-nhan-vien-->
@@ -81,133 +67,122 @@
     <div class="container">
       <div class="ky-nang-tuyen-dung">
         <div class="header-ky-nag">
-          <h2>Grow With Us</h2>
-          <p>In order to remain competitive in today's fast-changing workplace, we nurture our employees to have both knowledge and skills that are relevant, current and sought after.</p>
-          <p>The BreadTalk Group Academy strives to improve capabilities and deepen professional competencies to build the foundation of our company’s growth and success.</p>
+          <h2>Thành Công Cùng Chúng Tôi</h2>
+          <p> Để duy trì tính cạnh tranh trong môi trường làm việc thay đổi ngày nay, chúng tôi đào tạo nhân viên của chúng tôi để có cả kiến thức và kỹ năng có liên quan, hiện tại và được mong muốn.</p>
+          <p>Phở Haru luôn cố gắng nâng cao năng lực và nâng cao năng lực chuyên môn để xây dựng nền tảng cho sự phát triển và thành công của công ty.</p>
         </div><!--/.header-ky-nang-->
 
         <div class="drop-down-ky-nang">
-          <button class="accordion">Holistic Training Program</button>
+          <?php
+              //lay chuong trinh dao tao tu database
+              $qDaoTao = "
+                SELECT * FROM trangtuyendung
+              ";
+              $rDaoTao = mysqli_query($dbc, $qDaoTao);
+              kiemtraquery($rDaoTao, $qDaoTao);
+              while($chuongtrinh = mysqli_fetch_array($rDaoTao)) :
+          ?>
+
+          <button class="accordion"><?php echo $chuongtrinh['tenChuongTrinh']; ?></button>
           <div class="panel">
             <div class="row">
               <div class="col-md-6">
                 <div class="hinh-ky-nag">
-                  <img class="d-block w-100" src="upload/slide/slide1.jpg" alt="First slide">
+                  <img class="d-block w-100" src="upload/tuyendung/<?php echo $chuongtrinh['hinhChuongTrinh']; ?>" alt="<?php echo $chuongtrinh['tenChuongTrinh']; ?>">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="meta-ky-nag">
-                  <h2>Sharing what's close to our hearts</h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid provident doloribus eum modi id et, sed vero eveniet obcaecati accusamus.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam iste impedit odit nulla neque asperiores repudiandae voluptatum cumque alias.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorem eveniet a vero exercitationem cum error rerum beatae impedit natus voluptatum quo corporis iste delectus reprehenderit praesentium dicta placeat accusantium expedita consectetur laudantium, officiis, numquam! Molestiae libero earum necessitatibus quos!</p>
+                  <h2><?php echo $chuongtrinh['tenChuongTrinh']; ?></h2>
+                  <p><?php echo the_content($chuongtrinh['tenChuongTrinh']); ?></p>
                 </div>
               </div>
             </div>
           </div>
 
-          <button class="accordion">Industry Recognised Certification</button>
-          <div class="panel">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="hinh-ky-nag">
-                  <img class="d-block w-100" src="upload/slide/slide1.jpg" alt="First slide">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="meta-ky-nag">
-                  <h2>Sharing what's close to our hearts</h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid provident doloribus eum modi id et, sed vero eveniet obcaecati accusamus.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam iste impedit odit nulla neque asperiores repudiandae voluptatum cumque alias.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorem eveniet a vero exercitationem cum error rerum beatae impedit natus voluptatum quo corporis iste delectus reprehenderit praesentium dicta placeat accusantium expedita consectetur laudantium, officiis, numquam! Molestiae libero earum necessitatibus quos!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <button class="accordion">Mentorship</button>
-          <div class="panel">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="hinh-ky-nag">
-                  <img class="d-block w-100" src="upload/slide/slide1.jpg" alt="First slide">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="meta-ky-nag">
-                  <h2>Sharing what's close to our hearts</h2>
-                  <p>Lorem ipsum dolor sit amet.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid provident doloribus eum modi id et, sed vero eveniet obcaecati accusamus.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ipsam iste impedit odit nulla neque asperiores repudiandae voluptatum cumque alias.</p>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic dolorem eveniet a vero exercitationem cum error rerum beatae impedit natus voluptatum quo corporis iste delectus reprehenderit praesentium dicta placeat accusantium expedita consectetur laudantium, officiis, numquam! Molestiae libero earum necessitatibus quos!</p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <?php endwhile; ?>
         </div><!--/.drop-down-ky-nang-->
       </div><!--/.ky-nang-tuyen-dung-->
 
       <div class="tin-tuyen-dung">
         <div class="header-tin-tuyen-dung">
-          <h2>Explore a Career Now</h2>
-          <p>Available Positions in Singapore</p>
+          <h2>Tham Gia Cùng Chúng Tôi Ngay Bây Giờ</h2>
+          <p>Các vị trí sẵn có</p>
         </div>
 
         <div class="select-tin-tuyen-dung">
           <div>
-            <strong>level: </strong>
+            <strong> Chức Vụ: </strong>
             <select name="level" id="level">
-              <option value="">All Levels</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
+              <option value="">Tất Cả</option>
+              <?php
+                  //lay chuc vu tu database.
+                  $qChucVu = "
+                      SELECT * FROM viTriTuyenDung
+                  ";
+                  $rChucVu = mysqli_query($dbc, $qChucVu);
+                  kiemtraquery($rChucVu, $qChucVu);
+
+                  while($chucvu = mysqli_fetch_array($rChucVu)){
+                    echo "<option value='{$chucvu['idVTTDung']}'>". $chucvu['tenVTTDung']. "</option>";
+                  }
+              ?>
             </select>
           </div>
 
           <div>
-            <strong>Specialization: </strong>
+            <strong>Chuyên Ngành: </strong>
             <select name="level" id="level">
-              <option value="">All Specialization</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
-              <option value="manager">manager</option>
+              <option value="">Tất Cả</option>
+              <?php
+                  //lay chuc vu tu database.
+                  $qNghanh = "
+                      SELECT * FROM nghanhtuyendung
+                  ";
+                  $rNghanh = mysqli_query($dbc, $qNghanh);
+                  kiemtraquery($rNghanh, $qNghanh);
+
+                  while($nghanh = mysqli_fetch_array($rNghanh)){
+                    echo "<option value='{$nghanh['idNTDung']}'>". $nghanh['tenNTDung']. "</option>";
+                  }
+              ?>
             </select>
           </div>
         </div><!--/.select-tin-tuyen-dung-->
         <div class="table-tin-tuyen-dung">
-          <p>Displaying 1 to 20 of 36 job(s)</p>
           <table class="table">
             <thead>
               <tr>
-                <th>Date</th>
-                <th>Position</th>
-                <th>Location</th>
-                <th>Level / Specialization</th>
+                <th>Ngày đăng</th>
+                <th>Vị trí ứng tuyển</th>
+                <th>Nơi Làm Việc</th>
+                <th>Chức Vụ / Chuyên Ngành</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">07 Oct</th>
-                <td>Marketing Executive <br/>Food Republic Pte Ltd</td>
-                <td>North-East - Tai Seng</td>
-                <td>Fresh/Entry Level / Marketing/Business Dev</td>
-              </tr>
-              <tr>
-                <th scope="row">07 Oct</th>
-                <td>Marketing Executive <br/>Food Republic Pte Ltd</td>
-                <td>North-East - Tai Seng</td>
-                <td>Fresh/Entry Level / Marketing/Business Dev</td>
-              </tr>
-              <tr>
-                <th scope="row">07 Oct</th>
-                <td>Marketing Executive <br/>Food Republic Pte Ltd</td>
-                <td>North-East - Tai Seng</td>
-                <td>Fresh/Entry Level / Marketing/Business Dev</td>
-              </tr>
+              <?php
+                  //lay tin tuyen dung tu database
+                  $qTinTuyenDung = "
+                    SELECT ttd.*, vttd.*, ntd.*
+                    FROM tintuyendung ttd
+                    INNER JOIN viTriTuyenDung vttd ON ttd.idviTri = vttd.idVTTDung
+                    INNER JOIN nghanhtuyendung ntd ON ttd.idNghanh = ntd.idNTDung
+
+                  ";
+                  $rTinTuyenDung = mysqli_query($dbc, $qTinTuyenDung);
+                  kiemtraquery($rTinTuyenDung, $qTinTuyenDung);
+                  while($tins = mysqli_fetch_array($rTinTuyenDung)){
+                    echo "
+                    <tr>
+                      <td>{$tins['ngayDang']}</td>
+                      <td>{$tins['viTriTuyen']}</td>
+                      <td>{$tins['noiLamViec']}</td>
+                      <td>{$tins['tenVTTDung']} / {$tins['tenNTDung']}</td>
+                    </tr>
+                    ";
+                  }
+
+              ?>
             </tbody>
           </table>
         </div>

@@ -1,12 +1,81 @@
 <?php
 
-function layTinTuDong($title, $urlhinh, $mota, $iduser) {
+// Kiem tra xem ket qua tra ve co dung hay khong?
+function kiemtraquery($result, $query) {
   global $dbc;
-  $q = "
-    INSERT INTO tintuc (tieude, urlhinh, mota, id_user)
-    VALUES('{$title}', '{$urlhinh}', {'$mota'}, {$iduser})
-  ";
-  mysqli_query($dbc, $q);
+  if(!$result) {
+    die("Query {$query} \n<br/> MySQL Error: " .mysqli_error($dbc));
+  }
 }
+
+// hàm này để upload 1 file lên server
+// $name:
+/* Sử dụng:
+$type = array("png", "gif", "jpg", "jpeg", "mp3");
+Upload_Single_File("fileToUpload", "images/", 5, $type);
+*/
+function Upload_Single_File($name, $folder, $max, $type){
+  $target_file = $folder . basename($_FILES[$name]["name"]);
+  $uploadOk = 0;
+  $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+
+  // check fake
+  $check = getimagesize($_FILES[$name]["tmp_name"]);
+  if($check != false) {
+    echo "File is an image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "File is not an image.";
+    $uploadOk = 0;
+  }
+
+  // Check if file already exists
+  if (file_exists($target_file)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+  }
+
+  // Check file size
+  if ($_FILES[$name]["size"] > $max*1024*1024) {
+    echo "Sorry, your file is too large.";
+    $uploadOk = 0;
+  }
+
+  // Allow certain file formats
+  if( !in_array($imageFileType, $type) ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    $uploadOk = 0;
+  }
+
+  // Check if $uploadOk is set to 0 by an error
+  if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded.";
+  } else {
+    if (move_uploaded_file($_FILES[$name]["tmp_name"], $target_file)) {
+      echo "The file ". basename( $_FILES[$name]["name"]). " has been uploaded.";
+    } else {
+      echo "Sorry, there was an error uploading your file.";
+    }
+  }
+}
+
+//create paragrap tu csdl.
+function the_content($text) {
+  return str_replace(array("\r\n", "\n"), array("<p>", "</p>"), $text);
+}
+
+
+// Cat chu~ de hien thi thanh doan van ngan.
+function the_excerpt($text, $string = 400) {
+  $sanitized = htmlentities($text, ENT_COMPAT, 'UTF-8');
+  if(strlen($sanitized) > $string) {
+    $cutString = substr($sanitized,0,$string);
+    $words = substr($sanitized, 0, strrpos($cutString, ' '));
+    return $words;
+  } else {
+    return $sanitized;
+  }
+
+} // End the_excerpt
 
 ?>

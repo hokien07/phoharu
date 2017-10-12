@@ -1,4 +1,5 @@
 <?php include("database/dbCon.php");?>
+<?php include("function/function.php");?>
 <?php include ("block/header.php"); ?>
 
 <body>
@@ -10,8 +11,7 @@
   <div class="content-tin-tuc">
     <div class="container">
       <div class="header-tin-tuc">
-        <h2>Corporate Social Responsibility</h2>
-        <p>At the BreadTalk Group, we believe in giving back to the communities that we are a part of. We do our bit in supporting causes closest to our hearts, such as developing the local arts and culture scene, nurturing our next generation and supporting the local communities.</p>
+        <h2>Tổng Hợp Những Tin Mới Nhất Về Ẩm Thực</h2>
       </div>
 
       <hr class="style18">
@@ -19,22 +19,27 @@
       <div class="row">
         <?php
         $q = "
-        SELECT * FROM tintuc;
+        SELECT * FROM tintuc ORDER BY id_tintuc DESC LIMIT 0, 20;
         ";
         $r = mysqli_query($dbc, $q);
-        ?>
+        kiemtraquery($r, $q);
+        while ($tin = mysqli_fetch_array($r)):
+      ?>
 
-        <?php while ($tin = mysqli_fetch_array($r)):?>
           <div class="col-md-3">
             <div class="tin-tuc">
-              <img src="upload/tin-tuc/<?php echo $tin['urlhinh'] ?>" alt="<?php echo $tin['tieude'] ?>" class="img-responsive center-block">
+              <a href="#"><img src="upload/tin-tuc/<?php echo $tin['urlhinh'] ?>" alt="<?php echo $tin['tieude'] ?>" class="img-responsive center-block"></a>
               <div class="tin-tuc-meta">
-                <h4 class="title-tin-tuc"><?php echo $tin['tieude'] ?></h4>
-                <p><?php echo $tin['mota'] ?></p>
+                <h4 class="title-tin-tuc"><a href="tintuc.php?id=<?php echo $tin['id_tintuc']; ?>"><?php echo the_excerpt($tin['tieude'], 100);  ?></a> </h4>
+                <p>
+                  <?php  echo the_content(the_excerpt($tin['mota'], 200)); ?>
+                </p>
               </div>
             </div>
           </div>
+
         <?php endwhile; ?>
+
       </div>
     </div>
   </div>

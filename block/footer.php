@@ -57,6 +57,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/custom-dropdown.js"></script>
 <script src="js/ninja-slider.js"></script>
+<script src="ckeditor/ckeditor.js"></script>
 <script>
 function lightbox(idx) {
   //show the slider's wrapper: this is required when the transitionType has been set to "slide" in the ninja-slider.js

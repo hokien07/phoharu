@@ -14,13 +14,9 @@
       <div class="row">
         <div class="col-md-12">
           <div class="header-hoptac">
-            <h2>Franchising</h2>
-            <p>Our franchises offer rewarding careers while making a real difference to the people in their communities.</p>
-            <p>We are rapidly expanding our franchise network, and are currently seeking compatible enterprises to be part of our growth and success. We have forged partnerships in China, Hong Kong, Malaysia, Indonesia, Thailand, Vietnam, the Philippines, Taiwan, Sri Lanka, Qatar, Saudi Arabia, Oman, Kuwait, Bahrain and Cambodia to date.</p>
-            <p>We look forward to working with passionate, like-minded partners.</p>
+            <h2>Thương Hiệu Và Đối Tác</h2>
           </div>
         </div>
-
         <div class="col-md-12">
           <div class="thong-tin-hop-tac">
             <h2>Term of Franchise</h2>

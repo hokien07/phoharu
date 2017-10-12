@@ -1,4 +1,7 @@
-<?php include ("block/header.php"); ?>
+<?php
+  include("database/dbCon.php");
+  include("block/header.php");
+?>
 
 <body>
   <?php include ("block/topmenu.php"); ?>
@@ -12,34 +15,19 @@
       <div id="ninja-slider">
         <div class="slider-inner">
           <ul>
+            <?php
+              $q = "SELECT * FROM hinhanh";
+              $r = mysqli_query($dbc, $q);
+              while ($hinh = mysqli_fetch_array($r)):
+            ?>
             <li>
-              <a class="ns-img" href="upload/thu-vien/hinh1.jpg"></a>
+              <a class="ns-img" href="upload/thu-vien/<?php echo $hinh['urlHinh']; ?>"></a>
               <div class="caption">
-                <h3>Dummy Caption 1</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan purus.</p>
+                <h3><?php echo $hinh['tieuDeHinh']; ?></h3>
+                <p><?php echo $hinh['moTaHinh']; ?></p>
               </div>
             </li>
-            <li>
-              <a class="ns-img" href="upload/thu-vien/hinh2.jpg"></a>
-              <div class="caption">
-                <h3>Dummy Caption 2</h3>
-                <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet</p>
-              </div>
-            </li>
-            <li>
-              <a class="ns-img" href="upload/thu-vien/hinh3.jpg"></a>
-              <div class="caption">
-                <h3>Dummy Caption 4</h3>
-                <p>Quisque semper dolor sed neque consequat scelerisque at sed ex. Nam gravida massa.</p>
-              </div>
-            </li>
-            <li>
-              <a class="ns-img" href="upload/thu-vien/hinh4.jpg"></a>
-              <div class="caption">
-                <h3>Dummy Caption 5</h3>
-                <p>Proin non dui at metus suscipit bibendum.</p>
-              </div>
-            </li>
+          <?php endwhile; ?>
           </ul>
           <div id="fsBtn" class="fs-icon" title="Expand/Close"></div>
         </div>
@@ -50,18 +38,16 @@
     <br /><br />
     <div class="gallery">
       <div class="row">
+        <?php
+          $q = "SELECT * FROM hinhanh";
+          $r = mysqli_query($dbc, $q);
+          $count = 0;
+          while ($hinh = mysqli_fetch_array($r)):
+        ?>
         <div class="col-md-4">
-          <img src="upload/thu-vien/hinh1.jpg" onclick="lightbox(0)" height="245px"/>
+          <img src="upload/thu-vien/<?php echo $hinh['urlHinh']; ?>" onclick="lightbox(<?php echo $count?>)" height="245px"/>
         </div>
-        <div class="col-md-4">
-          <img src="upload/thu-vien/hinh2.jpg" onclick="lightbox(1)" height="245px"/>
-        </div>
-        <div class="col-md-4">
-          <img src="upload/thu-vien/hinh3.jpg" onclick="lightbox(2)" height="245px"/>
-        </div>
-        <div class="col-md-4">
-          <img src="upload/thu-vien/hinh4.jpg" onclick="lightbox(3)" height="245px"/>
-        </div>
+          <?php $count++; endwhile; ?>
       </div>
     </div>
   </div><!--/.container-->
