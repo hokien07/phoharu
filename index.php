@@ -5,6 +5,10 @@
   <?php include ("block/topmenu.php"); ?>
     <div class="bg-top">
       <img src="upload/cho-thue-phong-hop-quan-1-quan-3-1.jpg" alt="phở haru" class="img-responsive center-block">
+      <div class="text-center-bg-top">
+        <h2>atisfying Tastes & Appetites Around The World</h2>
+        <h4>WE BELIEVE IN THE POWER AND PROMISE THAT COMES FROM EATING SUMPTUOUS FOOD.</h4>
+      </div>
     </div>
 
     <?php
@@ -14,11 +18,11 @@
       $r = mysqli_query($dbc, $q);
       $trangchu = mysqli_fetch_array($r);
     ?>
-  <section id="tow-col" class="first post">
+  <section id="tow-col" class="first ">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <div class="col-right">
+          <div class="col-right wow slideInLeft">
             <div class="img-right">
             <img src="upload/trangchu/<?php echo $trangchu['banner1'] ?>" class="img-responsive center-block">
             </div>
@@ -26,7 +30,7 @@
         </div>
 
         <div class=" col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <div class="col-left">
+          <div class="col-left wow slideInRight">
             <?php
                 echo "<p>" . the_content($trangchu['gioiThieuNgan']).  "</p>"
             ?>
@@ -37,7 +41,7 @@
     </div>
   </section><!--/.first-->
 
-  <section id="breand" class="post">
+  <section id="breand">
     <div class="container-fuild">
       <h2>Danh mục thương hiệu</h2>
       <?php
@@ -68,19 +72,19 @@
     </div>
   </section><!-- /.breand -->
 
-  <section id="tow-col" class="second post">
+  <section id="tow-col" class="second">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div class="col-right">
-            <div class="img-right">
+            <div class="img-right wow slideInLeft">
               <img src="upload/trangchu/<?php echo $trangchu['banner2'] ?>" class="img-responsive center-block">
             </div>
           </div>
         </div>
 
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <div class="col-left">
+          <div class="col-left wow slideInRight">
             <?php
                   echo "<p>{$trangchu['moataHoatDong']} </p>"
               ?>
@@ -91,11 +95,11 @@
     </div>
   </section><!--/.second-->
 
-  <section id="tow-col" class="threre post">
+  <section id="tow-col" class="threre">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
-          <div class="col-right">
+          <div class="col-right wow slideInLeft">
             <?php
                 echo "<p>" . the_content($trangchu['tamNhinChienLuoc']).  "</p>"
               ?>
@@ -105,7 +109,7 @@
 
         <div class="col-lg-6 col-md-12">
           <div class="col-left">
-            <div class="img-left">
+            <div class="img-left wow slideInRight">
               <img src="upload/trangchu/<?php echo $trangchu['banner3'] ?>" class="img-responsive center-block">
             </div>
           </div>
@@ -114,19 +118,19 @@
     </div>
   </section>
 
-  <section id="tow-col" class="second four post">
+  <section id="tow-col" class="second four">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="col-right">
-            <div class="img-right">
+            <div class="img-right wow slideInLeft">
               <img src="upload/trangchu/<?php echo $trangchu['banner4'] ?>" class="img-responsive center-block">
             </div>
           </div>
         </div>
 
         <div class="col-lg-6 col-md-12">
-          <div class="col-left">
+          <div class="col-left wow slideInRight">
             <?php
                 echo "<p>" . the_content($trangchu['choDoLamViec']).  "</p>"
 
@@ -138,11 +142,11 @@
     </div>
   </section><!--/.second-->
 
-  <section id="tow-col" class="threre five post">
+  <section id="tow-col" class="threre five">
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12">
-          <div class="col-right">
+          <div class="col-right wow slideInLeft">
             <?php
                 echo "<p>" . the_content($trangchu['taiSaoChon']).  "</p>"
 
@@ -152,7 +156,7 @@
         </div>
 
         <div class="col-lg-6 col-md-12">
-          <div class="col-left">
+          <div class="col-left wow slideInRight">
             <div class="img-left">
               <img src="upload/trangchu/<?php echo $trangchu['banner5'] ?>" class="img-responsive center-block">
             </div>

@@ -1,27 +1,28 @@
 <footer id="footer" class="single-page">
-
-    <div class="row">
-      <div class="col-lg-4 col-md-4">
-        <h3>Giới thiệu</h3>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more</p>
-      </div>
-
-      <div class="col-lg-4">
-          <h3>Facebook</h3>
-          <div class="fb-page" data-href="https://www.facebook.com/phoharu/" data-tabs="timeline" data-width="321" data-height="203" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/phoharu/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/phoharu/">Phở Haru</a></blockquote></div>
-      </div>
-      <div class="col-lg-4 col-md-4">
-          <h3>Đối Tác</h3>
-          <?php
-              $q = "SELECT thongTinDoiTac FROM breand";
-              $r = mysqli_query($dbc, $q);
-              while ($dt = mysqli_fetch_array($r)) {
-                echo "<a href='#'>{$dt['thongTinDoiTac']}</a> <br/>";
-              }
-          ?>
-
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <h3>Giới thiệu</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more</p>
     </div>
+
+    <div class="col-lg-4">
+        <h3>Facebook</h3>
+        <div class="fb-page" data-href="https://www.facebook.com/phoharu/" data-tabs="timeline" data-width="321" data-height="203" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/phoharu/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/phoharu/">Phở Haru</a></blockquote></div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <h3>Đối Tác</h3>
+        <?php
+            $q = "SELECT thongTinDoiTac FROM breand";
+            $r = mysqli_query($dbc, $q);
+            while ($dt = mysqli_fetch_array($r)) {
+              echo "<a href='#'>{$dt['thongTinDoiTac']}</a> <br/>";
+            }
+        ?>
+
+    </div>
+  </div>
+</div>
 
   <div class="copy-right">
     <p>PhoHaru © 2015. Developed by 007Group . All Rights Reserved.</p>
@@ -37,15 +38,11 @@
 <script src="js/custom-dropdown.js"></script>
 <script src="js/ninja-slider.js"></script>
 <script src="ckeditor/ckeditor.js"></script>
-<script src="js/viewportchecker.js"></script>
-<script type="text/javascript">
-  jQuery(document).ready(function() {
-  	jQuery('.post').addClass("hidden").viewportChecker({
-  	    classToAdd: 'visible animated fadeInDown', // Class to add to the elements when they are visible
-  	    offset: 100
-  	   });
-  });
+<script src="js/wow.min.js"></script>
+<script>
+  new WOW().init();
 </script>
+
 <script>
 function lightbox(idx) {
   //show the slider's wrapper: this is required when the transitionType has been set to "slide" in the ninja-slider.js

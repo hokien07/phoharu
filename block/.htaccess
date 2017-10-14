@@ -1,0 +1,5 @@
+# tat chuc nag hien thi thu muc
+Option All -Indexes
+
+# khong cho phep hien thi thu muc
+IndexIgnore *

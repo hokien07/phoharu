@@ -14,5 +14,4 @@
   <link href="style.css" rel="stylesheet">
   <link href="css/ninja-slider.css" rel="stylesheet">
   <link href="css/animate.css" rel="stylesheet">
-  <link href="css/demo.css" rel="stylesheet">
 </head>

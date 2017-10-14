@@ -35,12 +35,10 @@
     <div class="container-fuild">
       <div class="row">
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
-          <div class="col-right">
-            <div class="img-right">
-              <h1 class="title-about">Sản Phẩm Của Chúng Tôi</h1>
-            </div>
+          <div class="col-right text-left-firt" >
+              <h1 class="title-about" style="width: 70%; margin: 10px auto;">Sản Phẩm Của Chúng Tôi</h1>
             <?php
-              echo "<p>". the_content($gioithieu['sanPham']); "</p>";
+              echo "<p style='width: 70%; margin: 10px auto; text-align: justify'>". the_content($gioithieu['sanPham']); "</p>";
              ?>
           </div>
         </div>
@@ -67,9 +65,9 @@
 
         <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
           <div class="col-left">
-              <h1 class="title-about"> Công nghệ hiện đại</h1>
+              <h1 class="title-about" style='width: 70%; margin: 10px auto;'> Công nghệ hiện đại</h1>
             <?php
-              echo "<p>". the_content($gioithieu['congThuc']); "</p>";
+              echo "<p style='width: 70%; margin: 10px auto; text-align: justify'>". the_content($gioithieu['congThuc']); "</p>";
              ?>
           </div>
         </div>
